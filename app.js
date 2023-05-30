@@ -25,6 +25,12 @@ const request = require("request"),
 let port = process.env.PORT || 1337
 app.listen(port, () => console.log(`http://localhost:${port}`));
 
+app.get("/", (req, res) => {
+    res.json({
+        "status": "deploy1"
+    })
+})
+
 // Accepts POST requests at /webhook endpoint
 app.post("/webhook", (req, res) => {
     console.log("hello")
